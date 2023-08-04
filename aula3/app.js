@@ -19,30 +19,34 @@ var entradaDeDados = readline.createInterface({
 })
 
 entradaDeDados.question('Digite seu nome: ', function(nomeUsuario){
-    
-    //Recebe na variavel nome o conteudo digitado pelo usuario
-    
-    var nome = nomeUsuario
+    let nome = nomeUsuario
 
     entradaDeDados.question('Digite sua primeira nota: ', function(primeiraNota){
-        var nota1 = primeiraNota
+        let nota1 = primeiraNota
         var nota1cv = parseFloat(nota1)
 
         entradaDeDados.question('Digite sua segunda nota: ', function(segundaNota){
-            var nota2 = segundaNota
+            let nota2 = segundaNota
             var nota2cv = parseFloat(nota2)
 
             entradaDeDados.question('Digite sua terceira nota: ', function(terceiraNota){
-                var nota3 = terceiraNota
+                let nota3 = terceiraNota
                 var nota3cv = parseFloat(nota3)
 
                 entradaDeDados.question("Digite sua quarta nota: ", function(quartaNota){
-                    var nota4 = quartaNota
+                    let nota4 = quartaNota
                     var nota4cv = parseFloat(nota4)
 
-                    media = (nota1cv + nota2cv + nota3cv + nota4cv) / 4 
+                    if(nota1 == "" || nota2 == "" || nota3 == "" || nota4 == ""){
 
-                    console.log(`Olá  ${nome} sua média é ${media}`)
+                        console.log('Você esqueceu de alguma nota')
+                       
+                    }else{
+                        media = (nota1cv + nota2cv + nota3cv + nota4cv) / 4 
+
+                        console.log(`Olá  ${nome} sua média é ${media}`)
+                        
+                    }
 
                     entradaDeDados.close()
                 })
