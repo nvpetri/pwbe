@@ -1,6 +1,7 @@
 /******************************************************************
- * Objetivo: manipular a entrada de dados via teclado no terminal,
- * realizar calculos e mostrar na tela
+ * Objetivo: Obter uma media manipulando a entrada de dados via 
+ * teclado no terminal, realizar calculos, conversão dos dados e 
+ * mostrar na tela
  * Autor: Nicolas Vasconcelos
  * Data : 04/08/23
  * Versão: 1.0
