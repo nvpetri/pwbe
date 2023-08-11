@@ -38,6 +38,8 @@ entradaDeDados.question('Digite seu nome: ', function(nomeUsuario){
 
                         console.log('Você esqueceu de alguma nota')
                        
+                    }else if(isNaN(nota1)||isNaN(nota2)||isNaN(nota3)||isNaN(nota4)){
+                        console.log('ERRO: É obrigatório a entrada apenas de NÚMEROS!!'.red)
                     }else{
                         media = (nota1cv + nota2cv + nota3cv + nota4cv) / 4 
 
