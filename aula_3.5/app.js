@@ -3,8 +3,8 @@
  * aplicação das médias uns sistema que informe o status do aluno e     *
  * mostre a média com cores remetendo ao status,                        *
  * Autor: Nicolas Vasconcelos Petri Santos                              *
- * Data: 04/08/23                                                       *
- * Versão 1.0                                                           *
+ * Data: 11/08/23                                                       *
+ * Versão 1.1                                                           *
  ************************************************************************/
 
 const readline = require('readline')
@@ -36,11 +36,14 @@ entradaDeDados.question('Digite seu nome: ', function(nomeUsuario){
 
                     if(nota1 == "" || nota2 == "" || nota3 == "" || nota4 == ""){
 
-                        console.log('Você esqueceu de alguma nota')
+                        console.log('ERRO: Você esqueceu de alguma nota'.red)
                        
                     }else if(isNaN(nota1)||isNaN(nota2)||isNaN(nota3)||isNaN(nota4)){
                         console.log('ERRO: É obrigatório a entrada apenas de NÚMEROS!!'.red)
-                    }else{
+                    }else if(nota1>10 || nota2>10 || nota3>10 ||nota4>10){
+                        console.log('ERRO: São permitidos apenas caractéres entre 0 e 10'.red)
+                    }
+                    else{
                         media = (nota1cv + nota2cv + nota3cv + nota4cv) / 4 
 
                         if(media >= 7){
