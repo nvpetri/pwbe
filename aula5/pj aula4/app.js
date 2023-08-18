@@ -45,7 +45,7 @@ entradaDeDados.question('Digite o primeiro valor: ', function(numero1){
                 else
                     console.log('Insira uma operação valida')
                 if (resultado != undefined)
-                    console.log(resultado)
+                    console.log(resultado.toFixed(2).replace('.',','))
                     else
                     console.log('Algo não está funcionando corretamente \n Tente novamente mais tarde')
             }
