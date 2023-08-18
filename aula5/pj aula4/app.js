@@ -23,29 +23,32 @@ entradaDeDados.question('Digite o primeiro valor: ', function(numero1){
         entradaDeDados.question('Escolha uma operação a ser realizada: [somar - subtrair - multiplicar - dividir] ', function(opcaoMath){
             let operacao = opcaoMath.toLowerCase()
 
-            if(valor1 == "" || valor2 == ""){
+            if(valor1 == "" || valor2 == "")
                 console.log('Vixi!!! É obrigatória a entrada de dados!!!')
-            }else if(isNaN(valor1) || isNaN(valor2)){
+            else if(isNaN(valor1) || isNaN(valor2))
                 console.log('Insira somente números!!')
-            }else{
+            else{
                 let resultado
-                if(operacao == "somar"){
-                    resultado = Number(valor1)+Number(valor2)
-                    console.log(resultado)
-                }else if(operacao == "subtrair"){
-                    resultado = Number(valor1)-Number(valor2)
-                    console.log(resultado)
-                }else if(operacao == "dividir"){
-                    resultado = Number(valor1)/Number(valor2)
-                    console.log(resultado)
-                }else if(operacao == "multiplicar"){
-                    resultado = Number(valor1)*Number(valor2)
-                    console.log(resultado)
-                }else{
+                valor1 = Number(valor1)
+                valor2 = Number(valor2)
+                if(operacao == "somar")
+                    resultado = valor1+valor2
+                else if(operacao == "subtrair")
+                    resultado = valor1-valor2
+                else if(operacao == "dividir"){
+                    if(valor1 == 0 || valor2 == 0)
+                        console.log('ERRO! Não foi possivel realizar essa divisão')
+                        else
+                            resultado = valor1/valor2   
+                    }else if(operacao == "multiplicar")
+                    resultado = valor1*valor2
+                else
                     console.log('Insira uma operação valida')
-                }
+                if (resultado != undefined)
+                    console.log(resultado)
+                    else
+                    console.log('Algo não está funcionando corretamente \n Tente novamente mais tarde')
             }
-
         })
     })
 })
