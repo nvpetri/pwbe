@@ -1,7 +1,7 @@
 /***************************************************************
  * Objetivo: Elaborar um programa para auxiliar no processo    *
  * de vendas de uma loja, realizando o calculo dos valores.    *
- * Autor: Nicolas Vasconcelos                                  *
+ * ❤️✈️ Autor: Nicolas Vasconcelos   ✈️❤️                    *
  * Data: 25/08/2023                                            *
  * Versão: 1.0                                                 *
  **************************************************************/
