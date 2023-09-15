@@ -23,7 +23,30 @@ entradaDeDados.question('Digite o primeiro valor: ', function(numero1){
         entradaDeDados.question('Escolha uma operação a ser realizada: [somar - subtrair - multiplicar - dividir] ', function(opcaoMath){
             let operacao = opcaoMath.toLowerCase()
 
-            if(valor1 == "" || valor2 == "")
+            valor1 = Number(valor1)
+            valor2 = Number(valor2)
+
+            switch(operacao){
+                case "subtrair":
+                    resultado = valor1 - valor2
+                    break
+                case "somar":
+                    resultado = valor1 + valor2
+                    break
+                case "multiplicar":
+                    resultado = valor1 * valor2
+                    break
+                case "dividir":
+                    if(valor1 == 0 || valor2 == 0)
+                        console.log('ERRO! Não foi possivel realizar essa divisão')
+                        else
+                            resultado = valor1/valor2
+                    break
+                default:
+                    break
+            }
+
+            /*if(valor1 == "" || valor2 == "")
                 console.log('Vixi!!! É obrigatória a entrada de dados!!!')
             else if(isNaN(valor1) || isNaN(valor2))
                 console.log('Insira somente números!!')
@@ -43,12 +66,16 @@ entradaDeDados.question('Digite o primeiro valor: ', function(numero1){
                     }else if(operacao == "multiplicar")
                     resultado = valor1*valor2
                 else
-                    console.log('Insira uma operação valida')
+                    console.log('Insira uma operação valida')*/
                 if (resultado != undefined)
                     console.log(resultado.toFixed(2).replace('.',','))
                     else
                     console.log('Algo não está funcionando corretamente \n Tente novamente mais tarde')
-            }
-        })
+            
+         })
     })
 })
+
+function calculadora(){
+    
+}
