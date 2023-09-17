@@ -1,44 +1,65 @@
-function entradaDados(){
-    let readline = require('readline')
+const readline = require('readline')
 
-    let rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    })
+function entradaDados() {
+    return new Promise((resolve) => {
+        const rl = readline.createInterface({
+            input: process.stdin,
+            output: process.stdout
+        })
 
-    rl.question('Olá, qual seu peso?', function(entradaPeso){
-        rl.question('Qual sua altura?', function(entradaAltura){
-            return entradaAltura, entradaPeso
-        })  
+        rl.question('Olá, qual seu peso? ', function(entradaPeso) {
+            rl.question('Qual sua altura? ', function(entradaAltura) {
+                rl.close()
+                resolve({ entradaPeso, entradaAltura })
+            })
+        })
     })
 }
 
-function calcularImc(entradaPeso, entradaAltura){
+function calcularImc(entradaPeso, entradaAltura) {
     let peso = Number(entradaPeso)
     let altura = Number(entradaAltura)
 
-    alturaCalc = altura * altura
-    let imc = peso/alturaCalc
+    let alturaCalc = altura * altura
+    let imc = peso / alturaCalc
+
+    imc = imc.toFixed(1)
 
     return imc
 }
 
-function situation(imc){
+function situation(imc) {
+    let resultado
 
-    switch(imc){
-        case imc<18.5:
-            let resultado = 'você está abaixo do peso'
-            return resultado
+    switch (true) {
+        case imc < 18.5:
+            resultado = 'você está abaixo do peso'
+            break
+        case imc >= 18.5 && imc < 25.0:
+            resultado = 'você está no peso ideal!'
+            break
+        case imc >= 25.0 && imc < 30.0:
+            resultado = 'você está com sobrepeso!'
+            break
+        case imc >= 30.0 && imc < 35.0:
+            resultado = 'você está com Obesidade Nível I!'
+            break
+        case imc >= 35.0 && imc < 40.0:
+            resultado = 'você está com Obesidade Nível II!'
+            break
+        case imc >= 40:
+            resultado = 'você está com Obesidade Nível III!'
+            break
+        default:
+            resultado = 'situação não identificada'
             break
     }
+
+    return resultado
 }
 
-function showInfo(imc, resultado){
-
+function showInfo(imc, resultado) {
     console.log(`Olá, seu IMC é de: ${imc}, ${resultado}`)
-
-    
-
 }
 
 module.exports = {
