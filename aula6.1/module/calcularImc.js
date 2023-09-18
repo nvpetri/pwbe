@@ -1,7 +1,7 @@
 const readline = require('readline')
 
 function entradaDados() {
-    return new Promise((resolve) => {
+    return new Promise((resolve) => { //promise é um objeto que representa o resultado de uma operação, nesse caso serve para que a entrada de dados seja acessivel por todos os outros, uma vez que ela é uma const
         const rl = readline.createInterface({
             input: process.stdin,
             output: process.stdout

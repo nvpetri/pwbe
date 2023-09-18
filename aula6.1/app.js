@@ -1,55 +1,51 @@
-const readline = require('readline');
-
+const readline = require('readline')
+const notasModule = require('./module/mediaEscolar')
+const calcularImcModule = require('./module/calcularImc')
 
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
-});
+})
 
 function mostrarMenu() {
-    console.log('Escolha uma opção:');
-    console.log('1. Calcular IMC');
-    console.log('2. Outra opção');
-    console.log('3. Sair');
+    console.log('Escolha uma opção:')
+    console.log('1. Calcular IMC')
+    console.log('2. Calcular Médias Escolares')
+    console.log('3. Sair')
 }
 
 function iniciarCalculoIMC() {
-    const calcularImcModule = require('./module/calcularImc');
     calcularImcModule.entradaDados().then(({ entradaPeso, entradaAltura }) => {
-        const imc = calcularImcModule.calcularImc(entradaPeso, entradaAltura);
-        const resultado = calcularImcModule.situation(imc);
-        calcularImcModule.showInfo(imc, resultado);
-        mostrarMenu();
-        selecionarOpcao();
-    });
+        const imc = calcularImcModule.calcularImc(entradaPeso, entradaAltura)
+        const resultado = calcularImcModule.situation(imc)
+        calcularImcModule.showInfo(imc, resultado)
+    })
 }
 
-function outraOpcao() {
-    console.log('Esta é outra opção.');
-    mostrarMenu();
-    selecionarOpcao();
+function calcularMediasEscolares() {
+    notasModule.obterRelatorio()
 }
 
 function selecionarOpcao() {
     rl.question('Digite o número da opção desejada: ', (opcao) => {
         switch (opcao) {
             case '1':
-                iniciarCalculoIMC();
-                break;
+                iniciarCalculoIMC()
+                break
             case '2':
-
-                break;
+                calcularMediasEscolares()
+                break
             case '3':
-                console.log('Saindo do aplicativo.');
-                rl.close();
-                break;
+                console.log('Saindo do aplicativo.')
+                rl.close()
+                break
             default:
-                console.log('Opção inválida. Tente novamente.');
-                mostrarMenu();
-                selecionarOpcao();
+                console.log('Opção inválida. Tente novamente.')
+                mostrarMenu()
+                selecionarOpcao()
         }
-    });
+    })
 }
 
-mostrarMenu();
-selecionarOpcao();
+mostrarMenu()
+selecionarOpcao()
