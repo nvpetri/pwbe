@@ -2,6 +2,7 @@ const readline = require('readline')
 const notasModule = require('./module/mediaEscolar')
 const calcularImcModule = require('./module/calcularImc')
 const calcularTabuadaModule = require('./module/calcularTabuada')
+const calcularFatorialModule = require('./module/calcularFatorial')
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -13,7 +14,8 @@ function mostrarMenu() {
     console.log('1. Calcular IMC')
     console.log('2. Calcular Médias Escolares')
     console.log('3. Calcular Tabuada')
-    console.log('4. Sair')
+    console.log('4. Calculadora Fatorial')
+    console.log('5. Sair')
 }
 
 function iniciarCalculoIMC() {
@@ -34,6 +36,10 @@ function calcularTabuada(){
     calcularTabuadaModule.solicitarEntrada()
 }
 
+function calcularFatorial(){
+    calcularFatorialModule.solicitarEntrada()
+}
+
 function selecionarOpcao() {
     rl.question('Digite o número da opção desejada: ', (opcao) => {
         switch (opcao) {
@@ -47,6 +53,9 @@ function selecionarOpcao() {
                 calcularTabuada()
                 break
             case '4':
+                calcularFatorial()
+                break
+            case 5:
                 console.log('Saindo do aplicativo.')
                 break
             default:
