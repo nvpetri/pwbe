@@ -6,7 +6,7 @@ const teclado = readline.createInterface({
 })
 
 function calcularTabuada(numero, contadorInicial, contadorFinal) {
-    console.log(`Tabuada do [${numero}]`)
+    console.log(`Tabuada do [${numero}]`)                                                                                        //nicolas vasconcelos
     
     for (let n = contadorInicial; n <= contadorFinal; n++) {
         console.log(`${numero} x ${n} = ${numero * n}`)
@@ -24,14 +24,14 @@ function solicitarEntrada() {
                 ) {
                     calcularTabuada(parseInt(numero), parseInt(contadorInicial), parseInt(contadorFinal))
                 } else {
-                    console.log('Entradas inválidas. Certifique-se de que os valores estejam dentro dos limites permitidos.')
+                    console.log('Entradas inválidas. Certifique-se de que os valores estejam dentro dos limites permitidos.')                                                                                                          //nicolas vasconcelos
                 }
                 teclado.close()
             })
         })
     })
 }
-
+//nicolas vasconcelos
 module.exports = {
     calcularTabuada,
     solicitarEntrada

@@ -1,12 +1,12 @@
 const readline = require('readline')
 
-const teclado = readline.createInterface({
+const teclado = readline.createInterface({//nicolas vasconcelos
     input: process.stdin,
     output: process.stdout
 })
 
 function calcularMedia(notas) {
-    const soma = notas.reduce((acc, nota) => acc + nota, 0) // .reduce, uma função usada para reduzir ou acumular os valores de um array
+    const soma = notas.reduce((acc, nota) => acc + nota, 0) // .reduce, uma função usada para reduzir ou acumular os valores de um array                                                                                                                       //nicolas vasconcelos
     return soma / notas.length
 }
 
@@ -14,7 +14,7 @@ function validarNotas(notas) {
     return notas.every((nota) => !isNaN(nota) && nota >= 0 && nota <= 100)
 }
 
-function mostrarRelatorio(aluno, professor, sexoAluno, sexoProfessor, curso, disciplina, notas, status, notaExame, media, mediaFinal) {
+function mostrarRelatorio(aluno, professor, sexoAluno, sexoProfessor, curso, disciplina, notas, status, notaExame, media, mediaFinal) {//nicolas vasconcelos
     console.log(`
     Relatório do aluno:
     O ${sexoAluno === 'F' ? 'aluna' : 'aluno'} ${aluno} foi ${status} na disciplina ${disciplina}.
@@ -34,7 +34,7 @@ function obterRelatorio() {
                 teclado.question('Sexo do aluno (M/F): ', (sexoAluno) => {
                     teclado.question('Nome do curso: ', (curso) => {
                         teclado.question('Nome da disciplina: ', (disciplina) => {
-                            teclado.question('Digite as 4 notas separadas por vírgula (ex: 80,75,90,60): ', (notasInput) => {
+                            teclado.question('Digite as 4 notas separadas por vírgula (ex: 80,75,90,60): ', (notasInput) => {//nicolas vasconcelos
                                 const notas = notasInput.split(',').map((nota) => parseFloat(nota)) //.split, divide o array .map percorre o array e aplica a função
 
                                 if (!validarNotas(notas)) {
@@ -60,7 +60,7 @@ function obterRelatorio() {
                                         } else {
                                             status = 'reprovado no exame'
                                         }
-
+//nicolas vasconcelos
                                         mostrarRelatorio(aluno, professor, sexoAluno, sexoProfessor, curso, disciplina, notas, status, notaExame, media, mediaFinal)
                                         teclado.close()
                                     })
@@ -70,7 +70,7 @@ function obterRelatorio() {
 
                                 mostrarRelatorio(aluno, professor, sexoAluno, sexoProfessor, curso, disciplina, notas, status, '', media, '')
                                 teclado.close()
-                            })
+                            })//nicolas vasconcelos
                         })
                     })
                 })

@@ -7,11 +7,11 @@ function entradaDados() {
             output: process.stdout
         })
 
-        rl.question('Olá, qual seu peso? ', function(entradaPeso) {
+        rl.question('Olá, qual seu peso? ', function(entradaPeso) {                                                                                                                                                                                                                                                      //nicolas vasconcelos
             rl.question('Qual sua altura? ', function(entradaAltura) {
                 rl.close()
                 resolve({ entradaPeso, entradaAltura })
-            })
+            })//nicolas vasconcelos
         })
     })
 }
@@ -23,7 +23,7 @@ function calcularImc(entradaPeso, entradaAltura) {
     let alturaCalc = altura * altura
     let imc = peso / alturaCalc
 
-    imc = imc.toFixed(1)
+    imc = imc.toFixed(1)//nicolas vasconcelos
 
     return imc
 }
@@ -39,7 +39,7 @@ function situation(imc) {
             resultado = 'você está no peso ideal!'
             break
         case imc >= 25.0 && imc < 30.0:
-            resultado = 'você está com sobrepeso!'
+            resultado = 'você está com sobrepeso!'//nicolas vasconcelos
             break
         case imc >= 30.0 && imc < 35.0:
             resultado = 'você está com Obesidade Nível I!'
@@ -53,14 +53,14 @@ function situation(imc) {
         default:
             resultado = 'situação não identificada'
             break
-    }
+    }//nicolas vasconcelos
 
     return resultado
 }
 
 function showInfo(imc, resultado) {
     console.log(`Olá, seu IMC é de: ${imc}, ${resultado}`)
-}
+}//nicolas vasconcelos
 
 module.exports = {
     calcularImc,

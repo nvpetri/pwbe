@@ -18,7 +18,7 @@ function mostrarMenu() {
 
 function iniciarCalculoIMC() {
     calcularImcModule.entradaDados().then(({ entradaPeso, entradaAltura }) => {
-        const imc = calcularImcModule.calcularImc(entradaPeso, entradaAltura)
+        const imc = calcularImcModule.calcularImc(entradaPeso, entradaAltura) //nicolas vasconcelos
         const resultado = calcularImcModule.situation(imc)
         calcularImcModule.showInfo(imc, resultado)
         mostrarMenu()
@@ -40,7 +40,7 @@ function selecionarOpcao() {
             case '1':
                 iniciarCalculoIMC()
                 break
-            case '2':
+            case '2': //nicolas vasconcelos
                 calcularMediasEscolares()
                 break
             case '3':
