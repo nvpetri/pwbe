@@ -3,6 +3,7 @@ const notasModule = require('./module/mediaEscolar')
 const calcularImcModule = require('./module/calcularImc')
 const calcularTabuadaModule = require('./module/calcularTabuada')
 const calcularFatorialModule = require('./module/calcularFatorial')
+const calcularParesImparesModule = require('./module/calcularParesImpares')
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -15,7 +16,8 @@ function mostrarMenu() {
     console.log('2. Calcular Médias Escolares')
     console.log('3. Calcular Tabuada')
     console.log('4. Calculadora Fatorial')
-    console.log('5. Sair')
+    console.log('5. Calcular Pares e Impares')
+    console.log('6. Sair')
 }
 
 function iniciarCalculoIMC() {
@@ -40,6 +42,10 @@ function calcularFatorial(){
     calcularFatorialModule.solicitarEntrada()
 }
 
+function calcularParesImpares(){
+    calcularParesImparesModule.calcularParesImpares()
+}
+
 function selecionarOpcao() {
     rl.question('Digite o número da opção desejada: ', (opcao) => {
         switch (opcao) {
@@ -55,7 +61,10 @@ function selecionarOpcao() {
             case '4':
                 calcularFatorial()
                 break
-            case 5:
+            case '5':
+                calcularParesImpares()
+                break
+            case '6':
                 console.log('Saindo do aplicativo.')
                 break
             default:
