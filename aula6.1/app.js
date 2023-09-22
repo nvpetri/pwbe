@@ -28,21 +28,22 @@ function iniciarCalculoIMC() {
         mostrarMenu()
         selecionarOpcao()
     })
+
 }
 
 function calcularMediasEscolares() {
     notasModule.obterRelatorio()
 }
 
-function calcularTabuada(){
+function calcularTabuada() {
     calcularTabuadaModule.solicitarEntrada()
 }
 
-function calcularFatorial(){
+function calcularFatorial() {
     calcularFatorialModule.solicitarEntrada()
 }
 
-function calcularParesImpares(){
+function calcularParesImpares() {
     calcularParesImparesModule.calcularParesImpares()
 }
 

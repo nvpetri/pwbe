@@ -1,10 +1,3 @@
-const readline = require('readline')
-
-const teclado = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
-
 function calcularFatorial(numero){
     if (numero === 0)
         return 1

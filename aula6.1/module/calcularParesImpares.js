@@ -1,10 +1,3 @@
-const readline = require('readline')
-
-const teclado = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
-
 function validarEntradas(numeroInicial, numeroFinal){
     if (numeroInicial < 0 || numeroInicial > 500 || numeroFinal < 100 || numeroFinal > 1000)
         return false

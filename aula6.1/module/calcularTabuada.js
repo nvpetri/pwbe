@@ -1,10 +1,3 @@
-const readline = require('readline')
-
-const teclado = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
-
 function calcularTabuada(numero, contadorInicial, contadorFinal) {
     console.log(`Tabuada do [${numero}]`)                                                                                        //nicolas vasconcelos
     

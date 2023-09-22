@@ -1,21 +1,3 @@
-const readline = require('readline')
-
-function entradaDados() {
-    return new Promise((resolve) => { //promise é um objeto que representa o resultado de uma operação, nesse caso serve para que a entrada de dados seja acessivel por todos os outros, uma vez que ela é uma const
-        const rl = readline.createInterface({
-            input: process.stdin,
-            output: process.stdout
-        })
-
-        rl.question('Olá, qual seu peso? ', function(entradaPeso) {                                                                                                                                                                                                                                                      //nicolas vasconcelos
-            rl.question('Qual sua altura? ', function(entradaAltura) {
-                rl.close()
-                resolve({ entradaPeso, entradaAltura })
-            })//nicolas vasconcelos
-        })
-    })
-}
-
 function calcularImc(entradaPeso, entradaAltura) {
     let peso = Number(entradaPeso)
     let altura = Number(entradaAltura)
