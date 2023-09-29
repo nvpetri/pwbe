@@ -66,9 +66,41 @@ const percorrerArray = function() {
     // for (let cont = 0; cont < listaDeProdutos.length; cont++)
     //     console.log('Nome do Produto: ' + listaDeProdutos[cont])
 
-    listaDeProdutos.forEach(function(produto) {
-        console.log('Nome do produto: ' + produto)
-    })
+    // listaDeProdutos.forEach(function(produto, indice) {
+    //     console.log(indice + 1 + ' Nome do produto: ' + produto)
+    // })
+
+    //Retorna o indice do elemento que foi encontrado
+    console.log(listaDeProdutos.indexOf('Impressora'))
+
+    //Retorna verdadeiro ou falso
+    console.log(listaDeProdutos.includes('Impressora'))
+
+    console.log(listaDeProdutos.includes('notebook'))
 }
 
-percorrerArray()
+const filtroProdutos = (nomeProduto) => {
+    let listaDeProdutos = ['Mouse', 'Teclado', 'Monitor', 'Impressora', 'MousePad', 'Gabinete', 'Processador', 'HD']
+    let nome = String(nomeProduto)
+
+
+    let status = false
+        // return listaDeProdutos.includes(nome)
+
+    // if (listaDeProdutos.indexOf(nome) >= 0)
+    //     status = true
+    // else
+    //     status = false
+
+    listaDeProdutos.forEach(function(produto) {
+        if (produto.toUpperCase() == nome.toUpperCase()) {
+            status = true
+        }
+    })
+    return status
+
+}
+
+console.log(filtroProdutos('teclado'))
+
+filtroProdutos()
