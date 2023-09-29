@@ -26,8 +26,49 @@ const introducaoArray = function() {
     // Adiciona elementos novos no final do array
     listaDeNomes.push('Roberto')
 
+    // Adiciona elementos novos na primeira posição do array
+    listaDeNomes.unshift('Ricardo')
+
+    //console.table(listaDeNomes)
+
+    // Remove o ultimo elemento do array
+    listaDeNomes.pop()
+
+    //Remove o primeiro elemento do array
+    listaDeNomes.shift()
+
+    //console.table(listaDeNomes)
+
+    // Remove um item especifico, (indice, quantidade de itens a partir dele)
+    listaDeNomes.splice(2, 1)
+
+    //console.table(listaDeNomes)
+
+    listaDeNomes.push('André da Silva', 'Ricardo da Silva', 'João da Silva', 10, true)
+
     console.table(listaDeNomes)
+
+    console.log(typeof(listaDeNomes[9]))
 
 }
 
-introducaoArray()
+const percorrerArray = function() {
+
+    let listaDeProdutos = ['Mouse', 'Teclado', 'Monitor', 'Impressora', 'MousePad', 'Gabinete', 'Processador', 'HD']
+
+    //While
+    // let cont = 0
+    // while (cont < listaDeProdutos.length) {
+    //     console.log('Nome do Produto: ' + listaDeProdutos[cont])
+    //     cont++    
+    // }
+
+    // for (let cont = 0; cont < listaDeProdutos.length; cont++)
+    //     console.log('Nome do Produto: ' + listaDeProdutos[cont])
+
+    listaDeProdutos.forEach(function(produto) {
+        console.log('Nome do produto: ' + produto)
+    })
+}
+
+percorrerArray()
