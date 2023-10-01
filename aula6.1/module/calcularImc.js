@@ -2,6 +2,10 @@ function calcularImc(entradaPeso, entradaAltura) {
     let peso = Number(entradaPeso);
     let altura = Number(entradaAltura);
 
+    if (isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
+        return NaN;
+    }
+
     let alturaCalc = altura * altura;
     let imc = peso / alturaCalc;
 
